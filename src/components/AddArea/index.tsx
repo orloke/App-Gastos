@@ -38,25 +38,36 @@ export const AddArea = ({add}:Prop) =>{
 
     return(
         <C.Container>
-            
-            <C.InputTitle>Dataa</C.InputTitle>
-            <input type="date" onChange={e=>setInputData(e.target.value)} />
+            <C.InputLable>
+                <C.InputTitle>Data</C.InputTitle>
+                <C.Inputinput type="date" onChange={e=>setInputData(e.target.value)} />
+            </C.InputLable>
 
-            <C.InputTitle>Categoria</C.InputTitle>
-            <select value={inputCategoria} onChange={e=>setInputCategoria(e.target.value)}>
-                <option></option>
-                {categoryKeys.map((item,index)=>(
-                    <option key={index} value={item}>{categories[item].title}</option>
-                ))}
-            </select>
+            <C.InputLable>
+                <C.InputTitle>Categoria</C.InputTitle>
+                <C.Inputselect value={inputCategoria} onChange={e=>setInputCategoria(e.target.value)}>
+                    <option></option>
+                    {categoryKeys.map((item,index)=>(
+                        <option key={index} value={item}>{categories[item].title}</option>
+                    ))}
+                </C.Inputselect>
+            </C.InputLable>
 
-            <C.InputTitle>Titulo</C.InputTitle>
-            <input value={inputTitle} type="text" onChange={e=> setInputTitle(e.target.value)}/>
+            <C.InputLable>
+                <C.InputTitle>Titulo</C.InputTitle>
+                    <C.Inputinput value={inputTitle} type="text" onChange={e=> setInputTitle(e.target.value)}/>
+                </C.InputLable>
+
+            <C.InputLable>
+                <C.InputTitle>Valor</C.InputTitle>
+                <C.Inputinput type="number" value={inputPrice === 0 ?'': inputPrice} onChange={e=> setInputPrice(parseFloat(e.target.value))}/>
+            </C.InputLable>           
             
-            <C.InputTitle>Valor</C.InputTitle>
-            <input type="number" value={inputPrice === 0 ?'': inputPrice} onChange={e=> setInputPrice(parseFloat(e.target.value))}/>
+            <C.InputLable>
+                <br/>
+                <C.Inputbutton onClick={addNewItem}>Adicionar</C.Inputbutton>
+            </C.InputLable>
             
-            <button onClick={addNewItem}>Adicionar</button>
         </C.Container>
     )
 }
