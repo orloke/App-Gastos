@@ -47,6 +47,15 @@ const App = () =>{
     setList(newArray)
   }
   
+  const deletList = () =>{
+    let b = list.map(item=>item).filter(item=>item.id!==0)
+    setList(b)
+  }
+
+  let b = list.map(item=>item).filter(item=>item.id!==3)
+  
+  
+  
   
 
   return(
@@ -57,7 +66,7 @@ const App = () =>{
       <C.Body>
         <InfoArea currentMonth = {currentMonth} changeM = {changeMonth} list={filterlist} income= {income} expense = {expense}/>
 
-        <AddArea add = {newList}/>
+        <AddArea add = {newList} indexList = {list.length}/>
         <TableArea list={filterlist}/>
       </C.Body>
     </C.Container>

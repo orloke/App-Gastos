@@ -5,10 +5,11 @@ import { newData } from '../../helpers/dataFilter';
 import {Item} from '../../types/Item'
 
 type Prop={
-    add: (newItem:Item)=>void
+    add: (newItem:Item)=>void,
+    indexList: number
 }
 
-export const AddArea = ({add}:Prop) =>{
+export const AddArea = ({add,indexList}:Prop) =>{
 
     let categoryKeys: string[] = Object.keys(categories);
     
@@ -19,17 +20,17 @@ export const AddArea = ({add}:Prop) =>{
 
     const addNewItem = () =>{
         add({
+            id: indexList,
             date: newData(inputData),
             category: inputCategoria, 
             title: inputTitle, 
             value: inputPrice
         })
-        console.log({
-            date: newData(inputData),
-            category: inputCategoria, 
-            title: inputTitle, 
-            value: inputPrice
-        });
+
+        setInputTitle('')
+        setInputData('')
+        setInputPrice(0)
+        setInputCategoria('')
         
     }
     

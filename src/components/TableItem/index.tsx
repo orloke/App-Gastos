@@ -5,10 +5,16 @@ import { categories } from '../../data/categories'
 
 
 type Props = {
-    item: Item
+    item: Item,
+    d: number
 }
 
-export const TableItem = ({item}: Props) =>{
+export const TableItem = ({item,d}: Props) =>{
+
+    const deleteItem = () =>{
+        alert(d)
+    }
+
     return(
         <C.TableLine>
             <C.TableColomun>{dataFormat(item.date)}</C.TableColomun>
@@ -22,6 +28,12 @@ export const TableItem = ({item}: Props) =>{
                 <C.Value colorText={categories[item.category].expense}>
                     R$ {item.value.toFixed(2)}
                 </C.Value>
+            </C.TableColomun>
+            <C.TableColomun>
+                <C.Option >
+                    <C.Button onClick={()=> alert(item.title)}>✏️</C.Button>
+                    <C.Button onClick={deleteItem} >❌</C.Button>
+                </C.Option>
             </C.TableColomun>
         </C.TableLine>
 

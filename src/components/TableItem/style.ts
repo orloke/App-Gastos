@@ -15,5 +15,27 @@ export const Category = styled.td<{color:string}>`
 `
 
 export const Value = styled.p<{colorText?: boolean}>`
-    color: ${props => props.colorText ? `red`:'green'}
+    color: ${props => props.colorText ? `red`:'green'};
+
 `
+
+export const Option = styled.p<{colorText?: boolean}>`
+    color: ${props => props.colorText ? `red`:'green'};
+    display: flex;
+
+`
+
+export const Button = styled.button`
+    display: flex;
+    margin-right: 5%;
+    background-color: #fff;
+    border: 1px solid;
+    cursor: pointer;
+    transform: scale(0.9);
+
+    &:hover{
+        transform: scale(1);
+    }
+
+`
+
