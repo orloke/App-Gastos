@@ -4,10 +4,11 @@ import {TableItem} from '../TableItem/index'
 
 type Props = {
     list: Item[],
+    del: (idregistro:number) => void
  
 }
 
-export const TableArea = ({list}:Props) =>{
+export const TableArea = ({list, del}:Props) =>{
     return(
         <C.Table>
             <thead>
@@ -21,7 +22,7 @@ export const TableArea = ({list}:Props) =>{
             </thead>
             <tbody>
                 {list.map((item, index)=>(
-                    <TableItem key={index} item={item} d = {item.id}/>
+                    <TableItem key={index} item={item} d = {item.id} del={del}/>
                 ))}
             </tbody>
         </C.Table>

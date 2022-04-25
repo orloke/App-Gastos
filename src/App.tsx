@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import * as C from './App.styles'
 import {Item} from './types/Item'
-import {Category} from './types/Category'
 import {categories} from './data/categories'
 import {items} from './data/items'
 import { filterListByMonth, getCurrentMonth } from './helpers/dataFilter'
@@ -47,16 +46,11 @@ const App = () =>{
     setList(newArray)
   }
   
-  const deletList = () =>{
-    let b = list.map(item=>item).filter(item=>item.id!==0)
+  const deletList = (idregistro:number) =>{
+    let b = list.map(item=>item).filter(item=>item.id!==idregistro)
     setList(b)
   }
 
-  let b = list.map(item=>item).filter(item=>item.id!==3)
-  
-  
-  
-  
 
   return(
     <C.Container>
@@ -67,7 +61,7 @@ const App = () =>{
         <InfoArea currentMonth = {currentMonth} changeM = {changeMonth} list={filterlist} income= {income} expense = {expense}/>
 
         <AddArea add = {newList} indexList = {list.length}/>
-        <TableArea list={filterlist}/>
+        <TableArea list={filterlist} del = {deletList}/>
       </C.Body>
     </C.Container>
   )

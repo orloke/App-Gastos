@@ -6,13 +6,14 @@ import { categories } from '../../data/categories'
 
 type Props = {
     item: Item,
-    d: number
+    d: number,
+    del: (idregistro:number) => void
 }
 
-export const TableItem = ({item,d}: Props) =>{
+export const TableItem = ({item,d, del}: Props) =>{
 
     const deleteItem = () =>{
-        alert(d)
+        del(d)
     }
 
     return(
