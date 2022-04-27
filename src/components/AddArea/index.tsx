@@ -26,15 +26,14 @@ export const AddArea = ({add,indexList}:Prop) =>{
             title: inputTitle, 
             value: inputPrice
         })
+        clear()        
+    }    
 
+    const clear = () =>{
         setInputTitle('')
-        setInputData('')
         setInputPrice(0)
         setInputCategoria('')
-        
     }
-    
-
     
 
     return(

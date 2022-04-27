@@ -32,7 +32,7 @@ export const TableItem = ({item,d, del}: Props) =>{
             </C.TableColomun>
             <C.TableColomun>
                 <C.Option >
-                    <C.Button onClick={()=> alert(item.title)}>✏️</C.Button>
+                    <C.Button onClick={()=> alert('Função em desenvolvimento!')}>✏️</C.Button>
                     <C.Button onClick={deleteItem} >❌</C.Button>
                 </C.Option>
             </C.TableColomun>
