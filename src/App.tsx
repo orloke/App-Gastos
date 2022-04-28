@@ -9,6 +9,7 @@ import { InfoArea } from './components/InfoArea'
 import { AddArea } from './components/AddArea'
 
 
+
 const App = () =>{
   
   const [list, setList] = useState(items)
@@ -16,9 +17,19 @@ const App = () =>{
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
   const [income, setIncome] = useState(0)
   const [expense, setExpense] = useState(0)
+  const [modalFechar, setModalFechar] = useState('none')
+
+  function compare(a:Item,b:Item) {
+    if (a.date < b.date)
+       return -1;
+    if (a.date > b.date)
+      return 1;
+    return 0;
+  }
+   
 
   useEffect(()=>{
-    setFilterList(filterListByMonth(list,currentMonth))
+    setFilterList(filterListByMonth( list.sort(compare),currentMonth))
   },[list,currentMonth])
   
   const changeMonth = (newMonth: string) =>{
@@ -59,9 +70,9 @@ const App = () =>{
       </C.Header>
       <C.Body>
         <InfoArea currentMonth = {currentMonth} changeM = {changeMonth} list={filterlist} income= {income} expense = {expense}/>
-
         <AddArea add = {newList} indexList = {list.length}/>
         <TableArea list={filterlist} del = {deletList}/>
+
       </C.Body>
     </C.Container>
   )
