@@ -17,7 +17,6 @@ const App = () =>{
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
   const [income, setIncome] = useState(0)
   const [expense, setExpense] = useState(0)
-  const [modalFechar, setModalFechar] = useState('none')
 
   function compare(a:Item,b:Item) {
     if (a.date < b.date)

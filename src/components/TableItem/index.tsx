@@ -2,8 +2,6 @@ import * as C from './style'
 import {Item} from '../../types/Item'
 import {dataFormat} from '../../helpers/dataFilter'
 import { categories } from '../../data/categories'
-import {Modal} from '../Modal/index'
-import { useState } from 'react'
 
 type Props = {
     item: Item,
@@ -12,7 +10,6 @@ type Props = {
 }
 
 export const TableItem = ({item,d, del}: Props) =>{
-    const [modalFechar, setModalFechar] = useState('none')
 
     const deleteItem = () =>{
         del(d)
@@ -34,8 +31,6 @@ export const TableItem = ({item,d, del}: Props) =>{
             </C.TableColomun>
             <C.TableColomun>
                 <C.Option >
-                    <C.Button onClick={()=> setModalFechar('flex')}>✏️</C.Button>
-                    <Modal modalFechar = {modalFechar} setModalFechar = {setModalFechar}/>
                     <C.Button onClick={deleteItem} >❌</C.Button>
                 </C.Option>
             </C.TableColomun>
