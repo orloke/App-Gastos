@@ -8,6 +8,10 @@ export const Container = styled.div`
     border-radius: 10px;
     margin-top: -3%;
     display: flex;
+    @media (max-width:760px) {
+        flex-direction: column;
+
+    }
 
 `
 
@@ -15,6 +19,10 @@ export const MonthArea= styled.div`
     flex: 1;
     display: flex;
     align-items: center;
+    @media (max-width:760px) {
+        margin-bottom: 6%;
+
+    }
 `
 
 export const MonthArrow = styled.div`

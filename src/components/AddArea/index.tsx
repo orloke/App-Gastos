@@ -19,6 +19,26 @@ export const AddArea = ({add,indexList}:Prop) =>{
     const [inputCategoria, setInputCategoria] = useState('')
 
     const addNewItem = () =>{
+
+        let erro = []
+
+        if(!inputCategoria){
+            erro.push('Escolha uma categoria!')
+        }
+        if(!inputData){
+            erro.push('Escolha uma data!')
+        }
+        if(!inputTitle){
+            erro.push('Escreva um titulo!')
+        }
+        if(!inputPrice){
+            erro.push('Escreva o preço!')
+        }
+
+        if (erro.length > 0) {
+            return alert(erro.join('\n'))
+        }
+
         add({
             id: indexList,
             date: newData(inputData),

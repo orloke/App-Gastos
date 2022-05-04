@@ -13,4 +13,16 @@ export const TableHeadColumn = styled.th<{width?: number}>`
     width: ${props => props.width ? `${props.width}px` : '100px'}
     padding: 10px 0;
     text-align: left;
+    @media (max-width:760px) {
+        text-align: center;
+        font-size: 14px
+    }
+`
+
+export const TableTbody = styled.tbody`
+    @media (max-width:760px) {
+        text-align: center;
+        font-size: 12px;
+    }
+    
 `

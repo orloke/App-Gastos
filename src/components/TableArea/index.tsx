@@ -16,15 +16,15 @@ export const TableArea = ({list, del}:Props) =>{
                     <C.TableHeadColumn width = {100}>Data</C.TableHeadColumn>
                     <C.TableHeadColumn width = {100}>Categoria</C.TableHeadColumn>
                     <C.TableHeadColumn width = {400}>Título</C.TableHeadColumn>
-                    <C.TableHeadColumn width = {100}>Valor</C.TableHeadColumn>
-                    <C.TableHeadColumn width = {100}>Opções</C.TableHeadColumn>
+                    <C.TableHeadColumn width = {400}>Valor</C.TableHeadColumn>
+                    <C.TableHeadColumn width = {50}>Opções</C.TableHeadColumn>
                 </tr>
             </thead>
-            <tbody>
+            <C.TableTbody>
                 {list.map((item, index)=>(
                     <TableItem key={index} item={item} d = {item.id} del={del}/>
                 ))}
-            </tbody>
+            </C.TableTbody>
         </C.Table>
     )
 }
